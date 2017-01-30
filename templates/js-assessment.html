@@ -296,6 +296,13 @@ function playGame(evt){
     $("#t-rex-img").append(tRexPhoto);
   }
 
+  function trexAttack(evt){
+    evt.preventDefault();
+    $.post('/t-rex-attack.json', {"victim-name":$('#victim-name').val()}, showTRexResults);
+  }
+
+  $('#t-rex-form').on('submit', trexAttack);
+
   // put your code here
 
 </script>
